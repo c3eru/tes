@@ -1,6 +1,6 @@
 env:
-    token: "ENCRYPTED[91aa86249a2b8217c4416fd0688d5f96bd0f1c00043f546a4c588cc41f1e1e9233082dbd36ac2f5624e3843ff1136e63]"
-    chat_id: "ENCRYPTED[271123886e84714e0f103ef02e04c0e8f59d20e429fb1c0f118b20bf88b4a98f966b095e487c0ba21ceb314215d0b060]"
+    token: "ENCRYPTED[3d4b1aeee0e15475b8e1f7d986c4a13de684b91dc28634f6b4cd103b122363c67b6c659636176ae470dd9370bc8c5bc1]"
+    chat_id: "ENCRYPTED[cb9899b3b249f589c980511fe6bee685c6519744974748bf10beeb79fc750f08df098d1dada15b93818544136a39246a]"
     
 task:
   name: "Kernel deploy.."
@@ -11,5 +11,5 @@ task:
       memory: 32G
 
   Build_script:
-      - git clone --depth=1 -b 4.19-rebase https://github.com/projects-nexus/android_kernel_lavender-4.19 lv && cd lv
+      - git clone --depth=1 -b rvc https://github.com/c3eru/kernel_xiaomi_citrus_sm6115 lv && cd lv
       - bash build.sh --azure
