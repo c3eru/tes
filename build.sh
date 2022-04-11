@@ -27,10 +27,10 @@ DEVICE=Lavender
 VERSION=X1
 
 # Kernel Defconfig
-DEFCONFIG=lavender_defconfig
+DEFCONFIG=vendor/juice-perf_defconfig
 
 # Files
-IMAGE=$(pwd)/out/arch/arm64/boot/Image.gz-dtb
+IMAGE=$(pwd)/out/arch/arm64/boot/Image
 
 # Verbose Build
 VERBOSE=0
