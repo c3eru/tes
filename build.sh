@@ -21,7 +21,7 @@ KERNEL_DIR="$(pwd)"
 ##----------------------------------------------------------##
 # Device Name and Model
 MODEL=Xiaomi
-DEVICE=Lavender
+DEVICE=juice
 
 # Kernel Version Code
 VERSION=X1
