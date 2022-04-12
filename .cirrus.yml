@@ -1,6 +1,12 @@
 env:
-    token: "ENCRYPTED[3d4b1aeee0e15475b8e1f7d986c4a13de684b91dc28634f6b4cd103b122363c67b6c659636176ae470dd9370bc8c5bc1]"
-    chat_id: "ENCRYPTED[cb9899b3b249f589c980511fe6bee685c6519744974748bf10beeb79fc750f08df098d1dada15b93818544136a39246a]"
+    DEVICE_CODENAME: juice
+    BUILD_USER: juice
+    BUILD_HOST: nfs-project
+    CIRRUS_CLONE_DEPTH: 1
+    CIRRUS_WORKING_DIR: /tmp/cirrus-ci-build
+    ANYKERNEL: "ENCRYPTED[714d28db47c375058945b8d323018b30653959617dbd6cc17aaf16b33d124ad13e714bc0fae0bfbaec5c4842dd8589f2]"
+    TG_TOKEN: "ENCRYPTED[722989143188a0c0d6e9b92f2f00e620f91f3e14a0d7a729d9566f062fff0ccde4953490d449b521e08832883247e12a]"
+    TG_CHAT_ID: "ENCRYPTED[52ef97ea6128737b88337a868fbf49e705bfa470759ef47d62f119c39dd53ce152192bbddfbf8ff216ce3c1e3a824042]"
     
 task:
   name: "Kernel deploy.."
@@ -10,6 +16,11 @@ task:
       cpu: 8
       memory: 32G
 
-  Build_script:
-      - git clone --depth=1 -b rvc https://github.com/c3eru/kernel_xiaomi_citrus_sm6115 lv && cd lv
-      - bash build.sh --azure
+  Sync_script:
+      - ./download.sh
+
+  Build_kernel_Clang_script:
+      - ./clang.sh
+
+  Notif_script:
+      - ./done.sh
