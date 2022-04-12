@@ -62,7 +62,7 @@ make -j$(nproc --all) ARCH=arm64 SUBARCH=arm64 O=out \
    if ! [ -a "$IMAGE" ]; then
 	finerr
    fi
-	git clone --depth=1 $ANYKERNEL $CIRRUS_WORKING_DIR/AnyKernel
+	git clone --depth=1 https://github.com/fadlyas07/anykernel-3 $CIRRUS_WORKING_DIR/AnyKernel
 	cp $IMAGE $CIRRUS_WORKING_DIR/AnyKernel
 }
 # Push kernel to channel
