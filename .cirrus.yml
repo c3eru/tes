@@ -4,8 +4,7 @@ env:
     BUILD_HOST: nfs-project
     CIRRUS_CLONE_DEPTH: 1
     CIRRUS_WORKING_DIR: /tmp/cirrus-ci-build
-    ANYKERNEL: "ENCRYPTED[714d28db47c375058945b8d323018b30653959617dbd6cc17aaf16b33d124ad13e714bc0fae0bfbaec5c4842dd8589f2]"
-    TG_TOKEN: "ENCRYPTED[52c282e38c5304f43ac5e9afa65cfc46c8c1bcdeb83bb1662d13d21a8328638d4043a5100f52924bcb8cfa2832603d2d]"
+    TG_TOKEN: "ENCRYPTED[ce4f7e889159d16472847d164bbc8b503b90a9560a56f6c71641a3d16bc0f605fa23fe1643e71850b373ec43692d90b0]"
     TG_CHAT_ID: "ENCRYPTED[470457b508c083087e2cccc7b464cdb0a0d76b63e340637d680998cef3c185ad10e79e0bbbfc3011a4d23c0e0087adfb]"
     
 task:
@@ -17,10 +16,10 @@ task:
       memory: 32G
 
   Sync_script:
-      - ./download.sh
+  #    - ./download.sh
 
   Build_kernel_Clang_script:
-      - ./clang.sh
+  #    - ./clang.sh
 
   Notif_script:
       - ./done.sh
