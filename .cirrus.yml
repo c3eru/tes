@@ -16,10 +16,10 @@ task:
       memory: 32G
 
   Sync_script:
-  #    - ./download.sh
+      - ./download.sh
 
   Build_kernel_Clang_script:
-  #    - ./clang.sh
+      - ./clang.sh
 
   Notif_script:
       - ./done.sh
