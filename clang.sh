@@ -4,7 +4,7 @@
 function env() {
 export KERNEL_NAME=NeedForSpeed-CLANG
 KERNEL_ROOTDIR=$CIRRUS_WORKING_DIR/$DEVICE_CODENAME
-DEVICE_DEFCONFIG=vendor/juice-perf_defconfig
+DEVICE_DEFCONFIG=juice-stock_defconfig
 CLANG_ROOTDIR=$CIRRUS_WORKING_DIR/CLANG
 CLANG_VER="$("$CLANG_ROOTDIR"/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 LLD_VER="$("$CLANG_ROOTDIR"/bin/ld.lld --version | head -n 1)"
@@ -14,8 +14,8 @@ START=$(date +"%s")
 export KBUILD_BUILD_USER=$BUILD_USER
 export KBUILD_BUILD_HOST=$BUILD_HOST
 export KBUILD_COMPILER_STRING="$CLANG_VER with $LLD_VER"
-export BOT_MSG_URL="https://api.telegram.org/bot$TG_TOKEN/sendMessage"
-export BOT_MSG_URL2="https://api.telegram.org/bot$TG_TOKEN"
+export BOT_MSG_URL="https://api.telegram.org/$TG_TOKEN/sendMessage"
+export BOT_MSG_URL2="https://api.telegram.org/$TG_TOKEN"
 }
 # Checking environtment
 # Warning !! Dont Change anything there without known reason.
@@ -70,7 +70,7 @@ function push() {
     cd $CIRRUS_WORKING_DIR/AnyKernel
     zip -r9 $KERNEL_NAME-$DEVICE_CODENAME-${DATE}.zip *
     ZIP=$(echo *.zip)
-    curl -F document=@$ZIP "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
+    curl -F document=@$ZIP "https://api.telegram.org/$TG_TOKEN/sendDocument" \
         -F chat_id="$TG_CHAT_ID" \
         -F "disable_web_page_preview=true" \
         -F "parse_mode=html" \
